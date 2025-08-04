@@ -610,15 +610,20 @@ mvn clean install
 ### ▶️ Run Locally
 
 ```bash
-mvn spring-boot:run
+mvn exec:java  
 ```
+or 
+```bash
+mvn exec:java -Dexec.mainClass="paymentManagementSystem.Main" 
+```
+ 
 
 
 
 ## 📈 Reporting
 
-- **Supported Types:** `FINANCIAL`, `AUDIT`
-- **Periods:** `MONTHLY`, `QUARTERLY`, `YEARLY`
+- **Supported Types:** `FINANCIAL`,
+- **Periods:** `MONTHLY`, `QUARTERLY`, 
 - **Output:** `txt` (default), `PDF` (on request)
 
 ---
