@@ -12,11 +12,8 @@ A comprehensive fintech solution for managing incoming and outgoing payments, wi
 - [🗄 Database Schema](#-database-schema)
 - [🏗 System Architecture](#-system-architecture)
 - [🚀 Installation](#-installation)
-- [📖 Usage](#-usage)
 - [📈 Reporting](#-reporting)
-- [📚 API Documentation](#-api-documentation)
-- [🤝 Contributing](#-contributing)
-- [🪪 License](#-license)
+
 
 ---
 
@@ -586,3 +583,47 @@ sequenceDiagram
         M-->>U: Return to menu
     end
 ```
+
+# 💳 Payment Management System
+
+A simple, secure internal Payments Management System for tracking:
+- Incoming payments from clients
+- Outgoing payments like vendor settlements, salary disbursements, etc.
+
+---
+
+## 🚀 Getting Started
+
+### 📥 Clone the Repository
+
+```bash
+git clone https://github.com/your-org/payment-management-system.git
+cd payment-management-system
+```
+
+### 🛠️ Build the Project
+
+```bash
+mvn clean install
+```
+
+### ▶️ Run Locally
+
+```bash
+mvn spring-boot:run
+```
+
+
+
+## 📈 Reporting
+
+- **Supported Types:** `FINANCIAL`, `AUDIT`
+- **Periods:** `MONTHLY`, `QUARTERLY`, `YEARLY`
+- **Output:** `txt` (default), `PDF` (on request)
+
+---
+
+
+
+
+
