@@ -1,13 +1,13 @@
 package paymentManagementSystem.enums;
 
-
-public enum PaymentType {
-    INCOMING("Incoming Payment"),
-    OUTGOING("Outgoing Payment");
+public enum PeriodType {
+    MONTHLY("Monthly"),
+    QUARTERLY("Quarterly"),
+    YEARLY("Yearly");
 
     private final String description;
 
-    PaymentType(String description) {
+    PeriodType(String description) {
         this.description = description;
     }
 

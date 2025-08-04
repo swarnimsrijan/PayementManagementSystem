@@ -1,13 +1,14 @@
 package paymentManagementSystem.enums;
 
 
-public enum PaymentType {
-    INCOMING("Incoming Payment"),
-    OUTGOING("Outgoing Payment");
+public enum UserRole {
+    ADMIN("Administrator"),
+    FINANCE_MANAGER("Finance Manager"),
+    VIEWER("Viewer");
 
     private final String description;
 
-    PaymentType(String description) {
+    UserRole(String description) {
         this.description = description;
     }
 

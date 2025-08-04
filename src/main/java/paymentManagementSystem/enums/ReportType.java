@@ -1,13 +1,15 @@
 package paymentManagementSystem.enums;
 
 
-public enum PaymentType {
-    INCOMING("Incoming Payment"),
-    OUTGOING("Outgoing Payment");
+public enum ReportType {
+    FINANCIAL("Financial Report"),
+    SUMMARY("Summary Report"),
+    DETAILED("Detailed Report"),
+    AUDIT("Audit Report");
 
     private final String description;
 
-    PaymentType(String description) {
+    ReportType(String description) {
         this.description = description;
     }
 
