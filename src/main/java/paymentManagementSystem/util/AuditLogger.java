@@ -24,7 +24,7 @@ public class AuditLogger {
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            System.err.println("Error logging audit action: " + e.getMessage());
+//            System.err.println("Error logging audit action: " + e.getMessage());
         }
     }
 

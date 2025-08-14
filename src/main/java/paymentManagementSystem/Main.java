@@ -195,11 +195,11 @@ public class Main {
         while (true) {
             System.out.println("\n=== Payments Management ===");
             System.out.println("1. Add New Payment");
-            System.out.println("2. Update Payment Status");
-            System.out.println("3. View All Payments");
-            System.out.println("4. View Payments by Type");
-            System.out.println("5. View Payments by Status");
-            System.out.println("6. Return to Main Menu");
+//            System.out.println("2. Update Payment Status");
+            System.out.println("2. View All Payments");
+            System.out.println("3. View Payments by Type");
+            System.out.println("4. View Payments by Status");
+            System.out.println("5. Return to Main Menu");
             System.out.print("Select an option: ");
 
             int choice = getIntInput();
@@ -209,19 +209,19 @@ public class Main {
                 case 1:
                     addNewPayment();
                     break;
+//                case 2:
+//                    updatePaymentStatus();
+//                    break;
                 case 2:
-                    updatePaymentStatus();
-                    break;
-                case 3:
                     viewAllPayments();
                     break;
-                case 4:
+                case 3:
                     viewPaymentsByType();
                     break;
-                case 5:
+                case 4:
                     viewPaymentsByStatus();
                     break;
-                case 6:
+                case 5:
                     return;
                 default:
                     System.out.println("Invalid option. Please try again.");
@@ -244,8 +244,8 @@ public class Main {
 
         System.out.print("Enter client/vendor name: ");
         String clientVendorName = scanner.nextLine();
-        System.out.print("Enter category name: ");
-        String categoryName = scanner.nextLine();
+//        System.out.print("Enter category name: ");
+//        String categoryName = scanner.nextLine();
 
         System.out.print("Enter account details: ");
         String accountDetails = scanner.nextLine();
@@ -266,7 +266,6 @@ public class Main {
                 .currency(currency)
                 .description(description)
                 .categoryId(categoryId)
-                .categoryName(categoryName)
                 .paymentDate(LocalDateTime.now())
                 .clientVendorName(clientVendorName)
                 .accountDetails(accountDetails)

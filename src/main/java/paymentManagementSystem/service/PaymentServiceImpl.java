@@ -62,6 +62,18 @@ public class PaymentServiceImpl implements PaymentService {
         payment.setCreatedBy(user);
 
         // Save payment
+//       System.out.println("Saving payment: " + payment);
+//        System.out.println("Payment field types:");
+//        System.out.println("paymentType: " + payment.getPaymentType().getClass().getSimpleName());
+//        System.out.println("amount: " + payment.getAmount().getClass().getSimpleName());
+//        System.out.println("currency: " + payment.getCurrency().getClass().getSimpleName());
+//        System.out.println("categoryName: " + payment.getCategoryName().getClass().getSimpleName());
+//        System.out.println("description: " + payment.getDescription().getClass().getSimpleName());
+//        System.out.println("referenceNumber: " + payment.getReferenceNumber().getClass().getSimpleName());
+//        System.out.println("status: " + payment.getStatus().getClass().getSimpleName());
+//        System.out.println("paymentDate: " + payment.getPaymentDate().getClass().getSimpleName());
+//        System.out.println("clientVendorName: " + payment.getClientVendorName().getClass().getSimpleName());
+//        System.out.println("accountDetails: " + payment.getAccountDetails().getClass().getSimpleName());
         Payment savedPayment = paymentRepository.save(payment);
 
         // Log audit

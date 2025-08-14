@@ -19,12 +19,12 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     @Override
     public Payment save(Payment payment) {
         String sql = """
-        INSERT INTO payments (payment_type, amount, currency, description, reference_number,
-                            status, category_id, created_by, payment_date, created_at, updated_at, category_name,
-                            client_vendor_name, account_details)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        RETURNING id
-        """;
+    INSERT INTO payments (payment_type, amount, currency, description, reference_number,
+                        status, category_id, created_by, payment_date, created_at, updated_at,
+                        client_vendor_name, account_details)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    RETURNING id
+    """;
 
         try (Connection conn = DatabaseConnectionManager.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -35,7 +35,13 @@ public class PaymentRepositoryImpl implements PaymentRepository {
             stmt.setString(4, payment.getDescription());
             stmt.setString(5, payment.getReferenceNumber());
             stmt.setString(6, payment.getStatus().toString());
-            stmt.setObject(7, payment.getCategory().getId());
+
+            if (payment.getCategory() != null) {
+                stmt.setLong(7, payment.getCategory().getId());
+            } else {
+                stmt.setNull(7, Types.INTEGER);
+            }
+
             stmt.setObject(8, payment.getCreatedBy().getId());
             stmt.setTimestamp(9, Timestamp.valueOf(payment.getPaymentDate()));
             stmt.setTimestamp(10, Timestamp.valueOf(LocalDateTime.now()));
@@ -45,7 +51,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
 
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                payment.setId((Long) rs.getObject(1));
+                payment.setId(rs.getLong(1));
             }
 
             return payment;
